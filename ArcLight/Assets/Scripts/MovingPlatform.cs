@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class MovingPlatform : MonoBehaviour
 {
-    public int xStartingScale = 5;
-    public int yStartingScale = 1;
-    public int zStartingScale = 10;
+    public float xStartingScale = 5;
+    public float yStartingScale = 1;
+    public float zStartingScale = 10;
     public float platformSpeed = 0.05f;
     public float platfromHeight = 10;
     public float deltaTimeScaler = 10;
