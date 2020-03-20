@@ -16,6 +16,8 @@ public class MovingPlatform : MonoBehaviour
     float ystartingPosition;
     bool isGrowing = true;
 
+    LevelManager levelManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,11 +25,15 @@ public class MovingPlatform : MonoBehaviour
         ystartingPosition = transform.position.y;
         isGrowing = true;
         transform.localScale = new Vector3(xStartingScale, yStartingScale, zStartingScale);
+        levelManager = GameObject.FindObjectOfType<LevelManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(levelManager.IsGameOver()) {
+            isActive = false;
+        }
         if(isActive) {
              MovePlatform();
         }
